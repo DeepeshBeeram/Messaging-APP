@@ -2,18 +2,18 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import {HttpClientModule} from '@angular/common/http';
 import {FormsModule} from '@angular/forms';
+import { BsDropdownModule } from 'ngx-bootstrap';
 
 import { AppComponent } from './app.component';
-import { ValueComponent } from './value/value.component';
 import { NavBarComponent } from './NavBar/NavBar.component';
 import { AuthService } from './Services/Auth.service';
 import { HomeComponent } from './Home/Home.component';
 import { RegisterComponent } from './Register/Register.component';
+import { AlertifyService } from './Services/Alertify.service';
 
 @NgModule({
    declarations: [
       AppComponent,
-      ValueComponent,
       NavBarComponent,
       HomeComponent,
       RegisterComponent
@@ -21,10 +21,12 @@ import { RegisterComponent } from './Register/Register.component';
    imports: [
       BrowserModule,
       HttpClientModule,
-      FormsModule
+      FormsModule,
+      BsDropdownModule.forRoot()
    ],
    providers: [
-      AuthService
+      AuthService,
+      AlertifyService
    ],
    bootstrap: [
       AppComponent
