@@ -7,15 +7,19 @@ import { AlertifyService } from '../Services/Alertify.service';
   providedIn: 'root'
 })
 export class AuthGuard implements CanActivate {
+
+  constructor(private auth: AuthService , private alert: AlertifyService, private router: Router) {}
+
   canActivate(): boolean {
     if (this.auth.loggedIn()) {
     return true;
-    } else {
-      this.alert.error('Trespassing is not allowed');
-      this.router.navigate(['/home']);
-      return false;
+    } else
+     {    this.alert.error('Trespassing is not allowed');
+          this.router.navigate(['/home']);
+          return false;
+              }
+
+
     }
   }
 
-  constructor(private auth: AuthService , private alert: AlertifyService, private router: Router) {}
-}
