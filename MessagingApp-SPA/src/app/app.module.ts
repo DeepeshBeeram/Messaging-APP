@@ -24,6 +24,7 @@ import { MemberDetailComponent } from './members/memberDetail/memberDetail.compo
 import { MemberDetailResolver } from './_resolvers/member-detail.resolver';
 import { MemberEditComponent } from './members/member-edit/member-edit.component';
 import { MemberEditResolver } from './_resolvers/member-edit.resolver';
+import { PreventUnsavedChanges } from './_guards/preventUnsavedChanges.guard';
 
 
 export function tokenGet(){
@@ -65,7 +66,8 @@ export function tokenGet(){
       AuthGuard,
       UserService,
       MemberDetailResolver,
-      MemberEditResolver
+      MemberEditResolver,
+      PreventUnsavedChanges
    ],
    bootstrap: [
       AppComponent

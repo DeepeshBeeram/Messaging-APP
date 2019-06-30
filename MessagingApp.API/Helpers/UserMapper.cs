@@ -24,6 +24,7 @@ namespace MessagingApp.API.Helpers
                 opt.ResolveUsing(d => d.DateOfBirth.CalculateAge());
             });
             CreateMap<Photo, PhotoDto>();
+            CreateMap<UpdateUserDto, Users>();
 
         }
 
